@@ -1,0 +1,15 @@
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.deps.json
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.runtimeconfig.json
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.runtimeconfig.dev.json
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.dll
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.pdb
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/Amazon.Lambda.Core.dll
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/Amazon.Lambda.Serialization.SystemTextJson.dll
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/obj/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.csprojAssemblyReference.cache
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/obj/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.AssemblyInfoInputs.cache
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/obj/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.AssemblyInfo.cs
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/obj/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.csproj.CoreCompileInputs.cache
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/obj/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.csproj.CopyComplete
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/obj/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.dll
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/obj/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.pdb
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/obj/Release/netcoreapp3.1/linux-x64/DotnetTestFunction.genruntimeconfig.cache

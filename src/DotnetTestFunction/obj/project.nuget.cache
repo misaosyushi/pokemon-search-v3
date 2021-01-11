@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "+zLP/emNYg4krVwgVZzDlsVVxKtfWa5u29RmcI6cDllvKnMZ4y2y2nKieo9Kd594QVkoK1xiSTpl2vWrBLpZpQ==",
+  "success": true,
+  "projectFilePath": "/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/DotnetTestFunction.csproj",
+  "expectedPackageFiles": [
+    "/Users/tsujitamisaki/.nuget/packages/amazon.lambda.core/1.2.0/amazon.lambda.core.1.2.0.nupkg.sha512",
+    "/Users/tsujitamisaki/.nuget/packages/amazon.lambda.serialization.systemtextjson/2.1.0/amazon.lambda.serialization.systemtextjson.2.1.0.nupkg.sha512",
+    "/Users/tsujitamisaki/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "/Users/tsujitamisaki/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
+  "logs": []
+}
