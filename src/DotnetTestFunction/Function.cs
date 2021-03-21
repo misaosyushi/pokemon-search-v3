@@ -17,20 +17,22 @@ namespace DotnetTestFunction
         // private static readonly AmazonDynamoDBClient client = new AmazonDynamoDBClient();
         // private static readonly string tableName = "PokemonTable";
         
+        // TODO: requestの文字列取る方法を調べる
         public async Task<string> FunctionHandler(APIGatewayProxyRequest request, ILambdaContext context)
         {
             Console.WriteLine("====== start lambda =======");
-            Console.WriteLine(request.Body);
+            Console.WriteLine(request.Body); // ここには入ってないっぽい
+
             var client = new AmazonDynamoDBClient();
             var ctx = new DynamoDBContext(client);
             var items = await ctx.ScanAsync<PokemonTableItem>(null).GetRemainingAsync();
             
             foreach (PokemonTableItem item in items)
             {
-                Console.WriteLine(item.Id);
+                // Console.WriteLine(item.Id);
                 foreach (var type in item.Types)
                 {
-                    Console.WriteLine(type);
+                    // Console.WriteLine(type);
                 }
             }
             
