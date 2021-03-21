@@ -2,7 +2,9 @@
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/DotnetTestFunction.deps.json
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/DotnetTestFunction.runtimeconfig.json
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/DotnetTestFunction.pdb
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/Amazon.Lambda.APIGatewayEvents.dll
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/Amazon.Lambda.Core.dll
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/Amazon.Lambda.Serialization.SystemTextJson.dll
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/AWSSDK.ApiGatewayV2.dll
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/AWSSDK.Core.dll
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/AWSSDK.DynamoDBv2.dll

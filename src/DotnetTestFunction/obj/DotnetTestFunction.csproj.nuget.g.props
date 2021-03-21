@@ -18,5 +18,6 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">/Users/tsujitamisaki/.nuget/packages/awssdk.core/3.5.3.8</PkgAWSSDK_Core>
     <PkgAWSSDK_DynamoDBv2 Condition=" '$(PkgAWSSDK_DynamoDBv2)' == '' ">/Users/tsujitamisaki/.nuget/packages/awssdk.dynamodbv2/3.5.4.37</PkgAWSSDK_DynamoDBv2>
+    <PkgAWSSDK_ApiGatewayV2 Condition=" '$(PkgAWSSDK_ApiGatewayV2)' == '' ">/Users/tsujitamisaki/.nuget/packages/awssdk.apigatewayv2/3.5.3.22</PkgAWSSDK_ApiGatewayV2>
   </PropertyGroup>
 </Project>

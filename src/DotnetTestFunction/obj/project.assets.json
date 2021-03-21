@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Amazon.Lambda.APIGatewayEvents/2.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll": {}
+        }
+      },
       "Amazon.Lambda.Core/1.2.0": {
         "type": "package",
         "compile": {
@@ -21,6 +30,18 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll": {}
+        }
+      },
+      "AWSSDK.ApiGatewayV2/3.5.3.22": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.5.3.8, 3.6.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.ApiGatewayV2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.ApiGatewayV2.dll": {}
         }
       },
       "AWSSDK.Core/3.5.3.8": {
@@ -46,6 +67,15 @@
       }
     },
     ".NETCoreApp,Version=v3.1/linux-x64": {
+      "Amazon.Lambda.APIGatewayEvents/2.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll": {}
+        }
+      },
       "Amazon.Lambda.Core/1.2.0": {
         "type": "package",
         "compile": {
@@ -65,6 +95,18 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll": {}
+        }
+      },
+      "AWSSDK.ApiGatewayV2/3.5.3.22": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.5.3.8, 3.6.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.ApiGatewayV2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.ApiGatewayV2.dll": {}
         }
       },
       "AWSSDK.Core/3.5.3.8": {
@@ -91,6 +133,21 @@
     }
   },
   "libraries": {
+    "Amazon.Lambda.APIGatewayEvents/2.4.0": {
+      "sha512": "QDDGZq2RwY4BBn2ai/dLLCdeHZBp1cSwqrjAe/m371z6Sv6pza8ZsVnZYxE+Dqmhh4UF0uZ6t520tVqOYcEzzQ==",
+      "type": "package",
+      "path": "amazon.lambda.apigatewayevents/2.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.lambda.apigatewayevents.2.4.0.nupkg.sha512",
+        "amazon.lambda.apigatewayevents.nuspec",
+        "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll",
+        "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.xml",
+        "lib/netstandard2.0/Amazon.Lambda.APIGatewayEvents.dll",
+        "lib/netstandard2.0/Amazon.Lambda.APIGatewayEvents.xml"
+      ]
+    },
     "Amazon.Lambda.Core/1.2.0": {
       "sha512": "goaq1LaH1UJB18BNG/Apxmn0P7dAlLWFbxU2nKxK+M4lH2KJaZDbtlP2gFEAJ+aENOMBHthaLPEtk3944J2OOg==",
       "type": "package",
@@ -117,6 +174,36 @@
         "amazon.lambda.serialization.systemtextjson.nuspec",
         "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll",
         "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.xml"
+      ]
+    },
+    "AWSSDK.ApiGatewayV2/3.5.3.22": {
+      "sha512": "uvZQ8vfFMYo250w2jdwV5JzjC4nZGdhpI4Rs2kfkDZmhuJdvgPnz+8XYjGkZELnwAeBKrWRCY2b7YW1W7uV/XA==",
+      "type": "package",
+      "path": "awssdk.apigatewayv2/3.5.3.22",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.ApiGatewayV2.CodeAnalysis.dll",
+        "awssdk.apigatewayv2.3.5.3.22.nupkg.sha512",
+        "awssdk.apigatewayv2.nuspec",
+        "lib/net35/AWSSDK.ApiGatewayV2.dll",
+        "lib/net35/AWSSDK.ApiGatewayV2.pdb",
+        "lib/net35/AWSSDK.ApiGatewayV2.xml",
+        "lib/net45/AWSSDK.ApiGatewayV2.dll",
+        "lib/net45/AWSSDK.ApiGatewayV2.pdb",
+        "lib/net45/AWSSDK.ApiGatewayV2.xml",
+        "lib/netcoreapp3.1/AWSSDK.ApiGatewayV2.dll",
+        "lib/netcoreapp3.1/AWSSDK.ApiGatewayV2.pdb",
+        "lib/netcoreapp3.1/AWSSDK.ApiGatewayV2.xml",
+        "lib/netstandard1.3/AWSSDK.ApiGatewayV2.dll",
+        "lib/netstandard1.3/AWSSDK.ApiGatewayV2.pdb",
+        "lib/netstandard1.3/AWSSDK.ApiGatewayV2.xml",
+        "lib/netstandard2.0/AWSSDK.ApiGatewayV2.dll",
+        "lib/netstandard2.0/AWSSDK.ApiGatewayV2.pdb",
+        "lib/netstandard2.0/AWSSDK.ApiGatewayV2.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
       ]
     },
     "AWSSDK.Core/3.5.3.8": {
@@ -180,7 +267,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "AWSSDK.ApiGatewayV2 >= 3.5.3.22",
       "AWSSDK.DynamoDBv2 >= 3.5.4.37",
+      "Amazon.Lambda.APIGatewayEvents >= 2.4.0",
       "Amazon.Lambda.Core >= 1.2.0",
       "Amazon.Lambda.Serialization.SystemTextJson >= 2.1.0"
     ]
@@ -222,9 +311,17 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "AWSSDK.ApiGatewayV2": {
+            "target": "Package",
+            "version": "[3.5.3.22, )"
+          },
           "AWSSDK.DynamoDBv2": {
             "target": "Package",
             "version": "[3.5.4.37, )"
+          },
+          "Amazon.Lambda.APIGatewayEvents": {
+            "target": "Package",
+            "version": "[2.4.0, )"
           },
           "Amazon.Lambda.Core": {
             "target": "Package",
