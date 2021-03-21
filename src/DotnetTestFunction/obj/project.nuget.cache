@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "+zLP/emNYg4krVwgVZzDlsVVxKtfWa5u29RmcI6cDllvKnMZ4y2y2nKieo9Kd594QVkoK1xiSTpl2vWrBLpZpQ==",
+  "dgSpecHash": "EWr3UUeBtRPqGrl8kaWLJfYMJLCrNdTpoALZN4mZrpmFQA1jtpvT6SJqdiSXi3JLy2RO0L5/ZLBeGMBr2BwMbA==",
   "success": true,
   "projectFilePath": "/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/DotnetTestFunction.csproj",
   "expectedPackageFiles": [
     "/Users/tsujitamisaki/.nuget/packages/amazon.lambda.core/1.2.0/amazon.lambda.core.1.2.0.nupkg.sha512",
     "/Users/tsujitamisaki/.nuget/packages/amazon.lambda.serialization.systemtextjson/2.1.0/amazon.lambda.serialization.systemtextjson.2.1.0.nupkg.sha512",
+    "/Users/tsujitamisaki/.nuget/packages/awssdk.core/3.5.3.8/awssdk.core.3.5.3.8.nupkg.sha512",
+    "/Users/tsujitamisaki/.nuget/packages/awssdk.dynamodbv2/3.5.4.37/awssdk.dynamodbv2.3.5.4.37.nupkg.sha512",
     "/Users/tsujitamisaki/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
     "/Users/tsujitamisaki/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
   ],

@@ -9,6 +9,7 @@
     ".NETCoreApp,Version=v3.1/linux-x64": {
       "DotnetTestFunction/1.0.0": {
         "dependencies": {
+          "AWSSDK.DynamoDBv2": "3.5.4.17",
           "Amazon.Lambda.Core": "1.2.0",
           "Amazon.Lambda.Serialization.SystemTextJson": "2.1.0"
         },
@@ -34,6 +35,25 @@
             "fileVersion": "0.0.0.0"
           }
         }
+      },
+      "AWSSDK.Core/3.5.1.58": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.5.1.58"
+          }
+        }
+      },
+      "AWSSDK.DynamoDBv2/3.5.4.17": {
+        "dependencies": {
+          "AWSSDK.Core": "3.5.1.58"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.5.4.17"
+          }
+        }
       }
     }
   },
@@ -56,6 +76,20 @@
       "sha512": "sha512-q2R4I77NrrAHDpcaWby9VA/XhE1tjG/2kpredwucRq7k4dTPCqqB7OFmbiFdlfuErrp2/9+X1l62c4unwVicpw==",
       "path": "amazon.lambda.serialization.systemtextjson/2.1.0",
       "hashPath": "amazon.lambda.serialization.systemtextjson.2.1.0.nupkg.sha512"
+    },
+    "AWSSDK.Core/3.5.1.58": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hXYOU6ov1iEgYhlvDbXHruSYL7TApdDNjugRLmFUY0Y11Ojnv8MHysoQ9kQI1xqF/VBdrqCnMektXX/FVUTl5A==",
+      "path": "awssdk.core/3.5.1.58",
+      "hashPath": "awssdk.core.3.5.1.58.nupkg.sha512"
+    },
+    "AWSSDK.DynamoDBv2/3.5.4.17": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lzFzr5M6yIcY9uU6OdYiQgXZh5g7Mx+xpuzmtV60tZKgUVTYx3UYjHD8gaIFoOmQ4VvVPTAVssiung7CbfOBNg==",
+      "path": "awssdk.dynamodbv2/3.5.4.17",
+      "hashPath": "awssdk.dynamodbv2.3.5.4.17.nupkg.sha512"
     }
   }
 }

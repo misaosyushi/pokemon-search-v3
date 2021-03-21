@@ -38,6 +38,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AWSSDK.DynamoDBv2": {
+              "target": "Package",
+              "version": "[3.5.4.37, )"
+            },
             "Amazon.Lambda.Core": {
               "target": "Package",
               "version": "[1.2.0, )"
