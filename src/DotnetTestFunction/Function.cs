@@ -27,15 +27,8 @@ namespace DotnetTestFunction
             var ctx = new DynamoDBContext(client);
             var items = await ctx.ScanAsync<PokemonTableItem>(null).GetRemainingAsync();
             
-            foreach (PokemonTableItem item in items)
-            {
-                // Console.WriteLine(item.Id);
-                foreach (var type in item.Types)
-                {
-                    // Console.WriteLine(type);
-                }
-            }
-            
+            items.ForEach(item => Console.WriteLine(item.Id));
+
             return "success";
         }
     }
