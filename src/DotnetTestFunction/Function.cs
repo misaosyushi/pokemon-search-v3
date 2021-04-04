@@ -1,8 +1,13 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.Model;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
 
@@ -13,33 +18,59 @@ namespace DotnetTestFunction
 {
     public class Function
     {
-        
-        // private static readonly AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-        // private static readonly string tableName = "PokemonTable";
-        
-        // TODO: requestの文字列取る方法を調べる
-        public async Task<string> FunctionHandler(APIGatewayProxyRequest request, ILambdaContext context)
+        public async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest request,
+            ILambdaContext context)
         {
             Console.WriteLine("====== start lambda =======");
-            Console.WriteLine(request.Body); // ここには入ってないっぽい
+            var message = JsonSerializer.Deserialize<LineMessage>(request.Body);
+            Console.WriteLine(message.Events[0].Message.Text);
 
             var client = new AmazonDynamoDBClient();
-            var ctx = new DynamoDBContext(client);
-            var items = await ctx.ScanAsync<PokemonTableItem>(null).GetRemainingAsync();
-            
-            items.ForEach(item => Console.WriteLine(item.Id));
+            // TODO: こっちの書き方でやりたい
+            // var ctx = new DynamoDBContext(client);
+            // var item = await ctx.QueryAsync<PokemonTableItem>(message.Events[0].Message.Text).GetRemainingAsync();
 
-            return "success";
+            var response = await client.QueryAsync(new QueryRequest
+            {
+                TableName = "PokemonTable",
+                KeyConditionExpression = "id = :id",
+                ExpressionAttributeValues = new Dictionary<string, AttributeValue>
+                {
+                    [":id"] = new AttributeValue {S = message.Events[0].Message.Text}
+                }
+            });
+            response.Items.ForEach(item => Console.WriteLine(item["id"].S));
+            var types = response.Items.SelectMany(item => item["types"].L.Select(type => type.S)).ToList();
+            Console.WriteLine(string.Join(" ", types));
+
+            return new APIGatewayProxyResponse
+            {
+                StatusCode = (int) HttpStatusCode.OK
+            };
         }
     }
-    
+
     [DynamoDBTable("PokemonTable")]
     class PokemonTableItem
     {
-        [DynamoDBHashKey("id")]
-        public string Id { get; set; }
+        [DynamoDBHashKey("id")] public string Id { get; set; }
 
-        [DynamoDBProperty("types")]
-        public string[] Types { get; set; }
+        [DynamoDBProperty("types")] public string[] Types { get; set; }
+    }
+
+    class LineMessage
+    {
+        [JsonPropertyName("events")] public Event[] Events { get; set; }
+    }
+
+    class Event
+    {
+        [JsonPropertyName("replyToken")] public string ReplyToken { get; set; }
+        [JsonPropertyName("message")] public Message Message { get; set; }
+    }
+
+    class Message
+    {
+        [JsonPropertyName("text")] public string Text { get; set; }
     }
 }
