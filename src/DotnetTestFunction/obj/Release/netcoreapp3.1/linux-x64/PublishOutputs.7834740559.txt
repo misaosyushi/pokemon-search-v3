@@ -8,3 +8,5 @@
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/AWSSDK.ApiGatewayV2.dll
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/AWSSDK.Core.dll
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/AWSSDK.DynamoDBv2.dll
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/Line.Messaging.dll
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/publish/Newtonsoft.Json.dll

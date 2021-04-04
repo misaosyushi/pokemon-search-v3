@@ -17,3 +17,5 @@
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/AWSSDK.DynamoDBv2.dll
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/Amazon.Lambda.APIGatewayEvents.dll
 /Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/AWSSDK.ApiGatewayV2.dll
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/Line.Messaging.dll
+/Users/tsujitamisaki/env/workspace/DotnetTestFunction/src/DotnetTestFunction/bin/Release/netcoreapp3.1/linux-x64/Newtonsoft.Json.dll

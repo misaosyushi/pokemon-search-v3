@@ -10,6 +10,7 @@ using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
+using Line.Messaging;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
@@ -32,21 +33,37 @@ namespace DotnetTestFunction
 
             var response = await client.QueryAsync(new QueryRequest
             {
-                TableName = "PokemonTable",
+                TableName = Environment.GetEnvironmentVariable("TABLE_NAME"),
                 KeyConditionExpression = "id = :id",
                 ExpressionAttributeValues = new Dictionary<string, AttributeValue>
                 {
                     [":id"] = new AttributeValue {S = message.Events[0].Message.Text}
                 }
             });
-            response.Items.ForEach(item => Console.WriteLine(item["id"].S));
-            var types = response.Items.SelectMany(item => item["types"].L.Select(type => type.S)).ToList();
-            Console.WriteLine(string.Join(" ", types));
+
+            try
+            {
+                var types = response.Items.SelectMany(item => item["types"].L.Select(type => type.S)).ToList();
+                await SendLinedMessage(message.Events[0].ReplyToken, string.Join(" ", types));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                await SendLinedMessage(message.Events[0].ReplyToken, "検索に失敗しました。\nガラル地方のポケモンの名前か確認してください\uDBC0\uDC86");
+            }
 
             return new APIGatewayProxyResponse
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
+        }
+
+        private async Task SendLinedMessage(string replyToken, string message)
+        {
+            var replyMessage = new TextMessage(message);
+            var messagingClient = new LineMessagingClient(Environment.GetEnvironmentVariable("CHANNEL_ACCESS_TOKEN"));
+
+            await messagingClient.ReplyMessageAsync(replyToken, new List<ISendMessage> {replyMessage});
         }
     }
 

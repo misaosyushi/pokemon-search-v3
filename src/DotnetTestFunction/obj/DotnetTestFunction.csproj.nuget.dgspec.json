@@ -57,6 +57,10 @@
             "Amazon.Lambda.Serialization.SystemTextJson": {
               "target": "Package",
               "version": "[2.1.0, )"
+            },
+            "Line.Messaging": {
+              "target": "Package",
+              "version": "[1.4.5, )"
             }
           },
           "imports": [
