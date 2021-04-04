@@ -37,7 +37,7 @@ namespace DotnetTestFunction
                 KeyConditionExpression = "id = :id",
                 ExpressionAttributeValues = new Dictionary<string, AttributeValue>
                 {
-                    [":id"] = new AttributeValue {S = message.Events[0].Message.Text}
+                    [":id"] = new AttributeValue {S = message.Events[0].Message.Text} // TODO: カタカナに変換してもいいかも
                 }
             });
 
