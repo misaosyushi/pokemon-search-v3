@@ -24,22 +24,7 @@ namespace DotnetTestFunction
         {
             Console.WriteLine("====== start lambda =======");
             var message = JsonSerializer.Deserialize<LineMessage>(request.Body);
-            Console.WriteLine(message.Events[0].Message.Text);
-
-            var client = new AmazonDynamoDBClient();
-            // TODO: こっちの書き方でやりたい
-            // var ctx = new DynamoDBContext(client);
-            // var item = await ctx.QueryAsync<PokemonTableItem>(message.Events[0].Message.Text).GetRemainingAsync();
-
-            var response = await client.QueryAsync(new QueryRequest
-            {
-                TableName = Environment.GetEnvironmentVariable("TABLE_NAME"),
-                KeyConditionExpression = "id = :id",
-                ExpressionAttributeValues = new Dictionary<string, AttributeValue>
-                {
-                    [":id"] = new AttributeValue {S = message.Events[0].Message.Text} // TODO: カタカナに変換してもいいかも
-                }
-            });
+            var response = await QueryAsyncById(message);
 
             try
             {
@@ -56,6 +41,24 @@ namespace DotnetTestFunction
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
+        }
+
+        private async Task<QueryResponse> QueryAsyncById(LineMessage message)
+        {
+            var client = new AmazonDynamoDBClient();
+            // TODO: こっちの書き方でやりたい
+            // var ctx = new DynamoDBContext(client);
+            // var item = await ctx.QueryAsync<PokemonTableItem>(message.Events[0].Message.Text).GetRemainingAsync();
+
+            return await client.QueryAsync(new QueryRequest
+            {
+                TableName = Environment.GetEnvironmentVariable("TABLE_NAME"),
+                KeyConditionExpression = "id = :id",
+                ExpressionAttributeValues = new Dictionary<string, AttributeValue>
+                {
+                    [":id"] = new AttributeValue {S = message.Events[0].Message.Text} // TODO: カタカナに変換してもいいかも
+                }
+            });
         }
 
         private async Task SendLinedMessage(string replyToken, string message)
