@@ -19,22 +19,24 @@ namespace DotnetTestFunction
 {
     public class Function
     {
+        private static readonly AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+
         public async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest request,
             ILambdaContext context)
         {
             Console.WriteLine("====== start lambda =======");
             var message = JsonSerializer.Deserialize<LineMessage>(request.Body);
-            var response = await QueryAsyncById(message);
+            var response = await QueryByIdAsync(message);
 
             try
             {
                 var types = response.Items.SelectMany(item => item["types"].L.Select(type => type.S)).ToList();
-                await SendLinedMessage(message.Events[0].ReplyToken, string.Join(" ", types));
+                await SendLinedMessageAsync(message.Events[0].ReplyToken, string.Join(" ", types));
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                await SendLinedMessage(message.Events[0].ReplyToken, "検索に失敗しました。\nガラル地方のポケモンの名前か確認してください\uDBC0\uDC86");
+                await SendLinedMessageAsync(message.Events[0].ReplyToken, "検索に失敗しました。\nガラル地方のポケモンの名前か確認してください\uDBC0\uDC86");
             }
 
             return new APIGatewayProxyResponse
@@ -43,9 +45,8 @@ namespace DotnetTestFunction
             };
         }
 
-        private async Task<QueryResponse> QueryAsyncById(LineMessage message)
+        private async Task<QueryResponse> QueryByIdAsync(LineMessage message)
         {
-            var client = new AmazonDynamoDBClient();
             // TODO: こっちの書き方でやりたい
             // var ctx = new DynamoDBContext(client);
             // var item = await ctx.QueryAsync<PokemonTableItem>(message.Events[0].Message.Text).GetRemainingAsync();
@@ -61,7 +62,7 @@ namespace DotnetTestFunction
             });
         }
 
-        private async Task SendLinedMessage(string replyToken, string message)
+        private async Task SendLinedMessageAsync(string replyToken, string message)
         {
             var replyMessage = new TextMessage(message);
             var messagingClient = new LineMessagingClient(Environment.GetEnvironmentVariable("CHANNEL_ACCESS_TOKEN"));
