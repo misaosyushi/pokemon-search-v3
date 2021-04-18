@@ -19,7 +19,7 @@ namespace DotnetTestFunction
 {
     public class Function
     {
-        private static readonly AmazonDynamoDBClient client = new AmazonDynamoDBClient();
+        private static readonly AmazonDynamoDBClient Client = new AmazonDynamoDBClient();
 
         public async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest request,
             ILambdaContext context)
@@ -51,7 +51,7 @@ namespace DotnetTestFunction
             // var ctx = new DynamoDBContext(client);
             // var item = await ctx.QueryAsync<PokemonTableItem>(message.Events[0].Message.Text).GetRemainingAsync();
 
-            return await client.QueryAsync(new QueryRequest
+            return await Client.QueryAsync(new QueryRequest
             {
                 TableName = Environment.GetEnvironmentVariable("TABLE_NAME"),
                 KeyConditionExpression = "id = :id",
